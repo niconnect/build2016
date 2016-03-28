@@ -1,0 +1,22 @@
+extends layout
+
+block header
+  .container
+    img(src='/images/logo.jpg',style='width:100%;margin-top:20px;')
+    hr
+
+block content
+  // Example row of columns
+  .row
+    .col-md-6
+      h2 キャンペーンへのエントリー
+      p
+        | 
+      p
+        a.btn.btn-default(href='/entry', role='button') 通常でエントリーする &raquo;
+    .col-md-6
+      h2 キャンペーンへの確率アップエントリー
+      p
+        | 
+      p
+        a.btn.btn-default(href='/extra', role='button') 確率アップでエントリーする &raquo;

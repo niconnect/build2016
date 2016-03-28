@@ -1,0 +1,28 @@
+extends layout
+
+block content
+  h1= title
+  p Build 2016 ニコ生キャンペーンに応募する
+  
+  hr
+
+  form.form-horizontal(action='/entry',method='post')
+    div.form-group
+      label.col-sm-2.control-label Twitter Id
+      div.col-sm-4
+        input.form-control(type='text',name='twitterId',required='required')
+    div.form-group
+      label.col-sm-2.control-label 都道府県
+      div.col-sm-4
+        select.form-control(name='prefecture',required='required')
+          option(value='') 未選択
+          - for (var i = 0; i < prefectures.length; i++) {
+            option(value='#{prefectures[i]}') #{prefectures[i]}
+          - }
+    div.form-group
+      label.col-sm-2.control-label 一言メッセージ
+      div.col-sm-4
+        textarea.form-control(type='text',name='message',rows="6",required='required')
+    div.form-group
+      div.col-sm-offset-2.col-sm-4
+        button.btn.btn-default(type='submit') 送信する
