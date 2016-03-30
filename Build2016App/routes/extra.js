@@ -5,7 +5,7 @@ var config = require('config');
 
 /* GET extra listing. */
 router.get('/', function(req, res, next) {
-  res.render('extra', { title: 'キャンペーン応募', prefecture: config.prefectures });
+  res.render('extra', { title: 'キャンペーン応募', prefectures: config.prefectures });
 });
 
 router.post('/', function (req, res, next) {
@@ -13,7 +13,7 @@ router.post('/', function (req, res, next) {
   
   var options = {
       uri: config.endpoint + "/api/extra",
-      forms: {
+      form: {
           TwitterId: req.body.twitterId,
           Prefecture: req.body.prefecture,
           Message: req.body.message
